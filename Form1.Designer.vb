@@ -69,7 +69,6 @@ Partial Class Form1
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.btnUPDATE = New System.Windows.Forms.Button()
-        Me.btnSUBMIT = New System.Windows.Forms.Button()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.txtPB = New System.Windows.Forms.TextBox()
@@ -82,6 +81,8 @@ Partial Class Form1
         Me.btnLoad = New System.Windows.Forms.Button()
         Me.addBtn = New System.Windows.Forms.Button()
         Me.btnDELETE = New System.Windows.Forms.Button()
+        Me.csCbo = New System.Windows.Forms.ComboBox()
+        Me.resetBtn = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -415,11 +416,13 @@ Partial Class Form1
         '
         Me.brthDate.CalendarFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.brthDate.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.brthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.brthDate.Location = New System.Drawing.Point(371, 233)
         Me.brthDate.Margin = New System.Windows.Forms.Padding(4)
         Me.brthDate.Name = "brthDate"
         Me.brthDate.Size = New System.Drawing.Size(303, 34)
         Me.brthDate.TabIndex = 33
+        Me.brthDate.Value = New Date(2025, 9, 16, 0, 0, 0, 0)
         '
         'Label17
         '
@@ -490,6 +493,7 @@ Partial Class Form1
         '
         'cmbSF
         '
+        Me.cmbSF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbSF.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbSF.FormattingEnabled = True
         Me.cmbSF.Items.AddRange(New Object() {"Jr.", "Sr.", "I", "II", "III"})
@@ -611,18 +615,6 @@ Partial Class Form1
         Me.btnUPDATE.Text = "Update"
         Me.btnUPDATE.UseVisualStyleBackColor = True
         '
-        'btnSUBMIT
-        '
-        Me.btnSUBMIT.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnSUBMIT.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSUBMIT.Location = New System.Drawing.Point(859, 706)
-        Me.btnSUBMIT.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnSUBMIT.Name = "btnSUBMIT"
-        Me.btnSUBMIT.Size = New System.Drawing.Size(137, 52)
-        Me.btnSUBMIT.TabIndex = 53
-        Me.btnSUBMIT.Text = "Submit"
-        Me.btnSUBMIT.UseVisualStyleBackColor = False
-        '
         'Label27
         '
         Me.Label27.AutoSize = True
@@ -673,7 +665,7 @@ Partial Class Form1
         '
         Me.txtCS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCS.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCS.Location = New System.Drawing.Point(23, 322)
+        Me.txtCS.Location = New System.Drawing.Point(559, 322)
         Me.txtCS.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCS.Multiline = True
         Me.txtCS.Name = "txtCS"
@@ -715,8 +707,9 @@ Partial Class Form1
         '
         'DataGridView1
         '
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(1051, 145)
+        Me.DataGridView1.Location = New System.Drawing.Point(1066, 145)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
@@ -756,11 +749,36 @@ Partial Class Form1
         Me.btnDELETE.Text = "Delete"
         Me.btnDELETE.UseVisualStyleBackColor = True
         '
+        'csCbo
+        '
+        Me.csCbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.csCbo.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.csCbo.FormattingEnabled = True
+        Me.csCbo.Items.AddRange(New Object() {"Single", "Married", "Widowed", "Separated"})
+        Me.csCbo.Location = New System.Drawing.Point(25, 320)
+        Me.csCbo.Margin = New System.Windows.Forms.Padding(4)
+        Me.csCbo.Name = "csCbo"
+        Me.csCbo.Size = New System.Drawing.Size(147, 36)
+        Me.csCbo.TabIndex = 67
+        '
+        'resetBtn
+        '
+        Me.resetBtn.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.resetBtn.Location = New System.Drawing.Point(1724, 730)
+        Me.resetBtn.Margin = New System.Windows.Forms.Padding(4)
+        Me.resetBtn.Name = "resetBtn"
+        Me.resetBtn.Size = New System.Drawing.Size(103, 28)
+        Me.resetBtn.TabIndex = 68
+        Me.resetBtn.Text = "Reset All Data"
+        Me.resetBtn.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1840, 765)
+        Me.Controls.Add(Me.resetBtn)
+        Me.Controls.Add(Me.csCbo)
         Me.Controls.Add(Me.btnDELETE)
         Me.Controls.Add(Me.addBtn)
         Me.Controls.Add(Me.btnLoad)
@@ -773,7 +791,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Label29)
         Me.Controls.Add(Me.txtCS)
         Me.Controls.Add(Me.Label30)
-        Me.Controls.Add(Me.btnSUBMIT)
         Me.Controls.Add(Me.btnUPDATE)
         Me.Controls.Add(Me.Label26)
         Me.Controls.Add(Me.Label24)
@@ -879,7 +896,6 @@ Partial Class Form1
     Friend WithEvents Label24 As Label
     Friend WithEvents Label26 As Label
     Friend WithEvents btnUPDATE As Button
-    Friend WithEvents btnSUBMIT As Button
     Friend WithEvents Label27 As Label
     Friend WithEvents Label28 As Label
     Friend WithEvents txtPB As TextBox
@@ -892,4 +908,6 @@ Partial Class Form1
     Friend WithEvents btnLoad As Button
     Friend WithEvents addBtn As Button
     Friend WithEvents btnDELETE As Button
+    Friend WithEvents csCbo As ComboBox
+    Friend WithEvents resetBtn As Button
 End Class
